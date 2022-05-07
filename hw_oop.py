@@ -95,6 +95,8 @@ def s_grade(lst_s, course):
                 if c == course:
                     sum_g += sum(s.grades[c])
                     count_g += len(s.grades[c])
+    if count_g <= 0:
+        return 0
     return round(sum_g/count_g, 2)
 
 
@@ -140,4 +142,5 @@ print(student2)
 print(student1.s_grad() > lecturer1.s_grad())
 print(student2.s_grad() > lecturer2.s_grad())
 
+print(s_grade([student1, student2], "Git"))
 print(s_grade([lecturer1, lecturer2], "Python"))
